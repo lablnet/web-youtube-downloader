@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="js/LanguageSelector.min.js"></script>
+	<script src="js/locale.js"></script>
+
     <style>
         .container {
             width: auto;
@@ -103,7 +106,7 @@
                         </div>
                         <!--end of col-->
                         <div class="col">
-                            <input id="txt_url" class="form-control form-control-lg" type="text" placeholder="請貼上YouTube影片網址">
+                            <input id="txt_url" class="form-control form-control-lg" type="text" placeholder=":placeholder">
                         </div>
                         <!--end of col-->
                         <div class="col-auto">
@@ -131,4 +134,13 @@
         </div>
     </main>
 </body>
+<script type="text/javascript">
+	var l = new LanguageSelector();
+	 $("#langSelector").change(function() {
+	     var s = $(this).children("option:selected").val();
+	     l.setLang(s);
+	     window.location = 'index.html';
+	 });
+	l.parse();
+</script>
 </html>
